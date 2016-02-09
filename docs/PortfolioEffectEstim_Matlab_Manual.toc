@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {chapter}{Contents}{1}{section*.1}
+\contentsline {chapter}{\numberline {1}Toolbox Installation}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Zip Archive (All OS)}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Install Wizard (Windows)}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Account Credentials}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Locate API Credentials}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Set API Credentials in MATLAB}{5}{section.2.2}
+\contentsline {chapter}{\numberline {3}Price Variance}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Integrated Variance}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Returns}{6}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Realized Variance}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Assumptions}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Estimator}{7}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Properties}{7}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Two Series Realized Variance}{7}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Assumptions}{7}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Estimator}{7}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Properties}{8}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Multiple Series Realized Variance}{8}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Assumptions}{8}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Estimator}{9}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Properties}{9}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Modulated Realized Variance}{9}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Assumptions}{9}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Estimator}{9}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Properties}{10}{subsection.3.5.3}
+\contentsline {section}{\numberline {3.6}Jump Robust Modulated Realized Variance}{10}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Assumptions}{10}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Estimator}{10}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Properties}{11}{subsection.3.6.3}
+\contentsline {section}{\numberline {3.7}Kernel-based Realized Variance}{11}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Assumptions}{11}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Kernel Types}{12}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Estimator}{12}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}Properties}{13}{subsection.3.7.4}
+\contentsline {subsubsection}{Flat-Top Kernel}{13}{subsubsection*.3}
+\contentsline {subsubsection}{Non-Flat-Top Kernel}{14}{subsubsection*.4}
+\contentsline {section}{\numberline {3.8}IV Estimators Comparison}{14}{section.3.8}
+\contentsline {chapter}{\numberline {4}Price Noise Variance}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}RV Noise Variance}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Properties}{15}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Autocovariance Noise Variance}{15}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Properties}{16}{subsection.4.2.1}
+\contentsline {chapter}{\numberline {5}Price Quarticity}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Integrated Quarticity}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Realized Quarticity}{17}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Assumptions}{17}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Estimator}{17}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Properties}{17}{subsection.5.2.3}
