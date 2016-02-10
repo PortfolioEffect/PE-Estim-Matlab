@@ -103,7 +103,7 @@ Inc.}}\\[2cm]
 {August 20, 2015}
 \end{center}
 \end{titlepage}
-
+ 
 \bookmarksetup{startatroot}
 \cleardoublepage
 \phantomsection
@@ -280,11 +280,11 @@ estimator=estimator_create('asset','AAPL','fromTime','2014-10-01 09:30:00','toTi
 
 % sample results every 30 seconds
 estimator_settings(estimator, 'resultsSamplingInterval','30s');
-variance_30s=variance_tsrv(estimator);
+variance_30s=variance_tsrv(estimator,2);
 
 % sample results every 5 minutes
 estimator_settings(estimator, 'resultsSamplingInterval','15m');
-variance_15m=variance_tsrv(estimator);
+variance_15m=variance_tsrv(estimator,2);
 
 util_plot2d(variance_30s,'30s', 'Title','TSRV, resultsSamplingInterval')+...
 util_line2d(variance_15m, '15m')
@@ -308,11 +308,11 @@ estimator=estimator_create('asset','AAPL','fromTime','2014-10-01 09:30:00','toTi
 
 % sample input prices every 30 seconds
 estimator_settings(estimator, 'inputSamplingInterval','30s');
-variance_30s=variance_tsrv(estimator);
+variance_30s=variance_tsrv(estimator,2);
 
 % sample input prices every 5 min
 estimator_settings(estimator, 'inputSamplingInterval','5m');
-variance_5m=variance_tsrv(estimator);
+variance_5m=variance_tsrv(estimator,2);
 
 util_plot2d(variance_30s,'30s', 'Title','TSRV, inputSamplingInterval')+...
 util_line2d(variance_5m, '5m')
@@ -334,11 +334,11 @@ estimator=estimator_create('asset','AAPL','fromTime','2014-10-01 09:30:00','toTi
 
 % Price jumps detection is enabled for returns and moments
 estimator_settings(estimator, 'jumpsModel','all');
-variance_all=variance_tsrv(estimator);
+variance_all=variance_tsrv(estimator,2);
 
 % Price jumps detection is disabled
 estimator_settings(estimator, 'jumpsModel','none');
-variance_none=variance_tsrv(estimator);
+variance_none=variance_tsrv(estimator,2);
 
 util_plot2d(variance_all,'all', 'Title','TSRV, jumpsModel')+...
 util_line2d(variance_none, 'none')
