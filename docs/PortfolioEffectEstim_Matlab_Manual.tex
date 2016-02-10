@@ -80,6 +80,7 @@ showspaces=false,
 showstringspaces=false,
 breaklines=true}
 
+\usepackage{Sweave}
 \begin{document}
 \begin{titlepage}
 \begin{center}
@@ -110,7 +111,6 @@ Inc.}}\\[2cm]
 \bibliographystyle{amsplain}%}
 \renewcommand{\bibname}{Contents}
 \tableofcontents 
-%\VignetteIndexEntry{PorfolioEffectEstim package}
 
 \chapter{Toolbox Installation}
 PortfolioEffect Estimators Toolbox for MATLAB is provided as a zip archive for
@@ -118,18 +118,18 @@ all types of operating systems and as a self-install executable file for Windows
 
 \section{Zip Archive (All OS)}
 Download zip archive with a toolbox from
-PortfolioEfect
-\href{https://www.portfolioeffect.com/docs/platform/quant/downloads}{downloads}
+PortfolioEffect
+\href{https://www.portfolioeffect.com/docs/platform/quant/tools/matlab}{downloads}
 or MATLAB Central
-\href{http://www.mathworks.com/matlabcentral/fileexchange}{File Exchange}.
-
+\href{http://www.mathworks.com/matlabcentral/fileexchange/55335-portfolioeffectestim-high-frequency-price-estimators---models-toolbox}{File Exchange}.
+ 
 Once downloaded, unpack archive into the folder and add
 PortfolioEffectEstim folder to MATLAB's path using 'Set Path' menu. Then call
 any method of the package in MATLAB editor to continue with the set-up:
 \begin{lstlisting}
 +++++++++++++++++++++++++++++++++++++++++++++++++
 Welcome to PortfolioEffect Estimators Toolbox.
-
+ 
 Setup will download required binary files (~5mb).
 Please, wait...
 SUCCESS. File downloaded to: 
@@ -144,8 +144,8 @@ Setup complete! Restart Matlab session now.
 Restart MATLAB to complete installation.
 
 \section{Install Wizard (Windows)}
-Download self-installeer executable for Windows from PortfolioEfect
-\href{https://www.portfolioeffect.com/docs/platform/quant/downloads}{downloads}.
+Download self-installer executable for Windows from PortfolioEffect
+\href{https://www.portfolioeffect.com/docs/platform/quant/tools/matlab}{downloads}.
 Follow the installation instructions. Once the wizard completes, add the
 PortfolioEffectEstim folder to MATLAB's path using 'Set Path' menu. 
 The PortfolioEffect Estimators Toolbox is now fully configured.
@@ -179,8 +179,6 @@ You are now ready to call PortfolioEffect methods.
 \section{User Data}
 Users may supply their own historical datasets for asset entries. 
 This external data could be one a OHLC bar column element (e.g. 1-second close prices) or a vector of actual transaction prices that contains non-equidistant data points. 
-% You might want to pre-pend at least N =(4 x windowLength) data points to the
-% beginning of the interval of interest which would be used for initial calibration of portfolio metrics.
 \subsection{Create Estimator}
 Method
 \href{https://www.portfolioeffect.com/docs/platform/quant/functions/general-functions/estimator-create}{estimator\_create()}.
@@ -351,7 +349,7 @@ util_line2d(variance_none, 'none')
 %------------------------------------------------------
 \section{Integrated Variance}
 %------------------------------------------------------
-Assume that the logarithmic eqilibrium price of a financial asset is given by the following
+Assume that the logarithmic equilibrium price of a financial asset is given by the following
 diffusion process
 \begin{equation}
 X_t = \int_0^t \mu(s)ds + \int_0^t \sigma(s)dW(s)
@@ -359,7 +357,7 @@ X_t = \int_0^t \mu(s)ds + \int_0^t \sigma(s)dW(s)
 where
 
 \begin{itemize}
-\item $W_t$ is a standart Brownian Motion,
+\item $W_t$ is a standard Brownian Motion,
 \item the mean process $\mu$ is continuous and of finite variation,
 \item $\sigma(t) >0$ denotes the cadlag instantaneous volatility.
 \end{itemize}
@@ -370,7 +368,7 @@ $\Delta$ according to ~\cite[Pigorsch et al.]{Pigorsch_Pigorsch_Popov}:
 IV_t = \int_{t-\Delta}^t \sigma^2(s)ds
 \end{equation}
 \subsection{Returns}
-Suppose there exist $m$ intraday eqilibrium returns, the $i$th intraday return is
+Suppose there exist $m$ intraday equilibrium returns, the $i$th intraday return is
 then defined as:
 \begin{equation}
 r_i^{X(m)}= X_{i/m} - X_{(i-1)/m}, \quad i = 1,2,\ldots,m.
@@ -407,7 +405,7 @@ variance measure, defined as ~\cite[Zu and Boswijk, 2014]{Zu_Boswijk}:
 RV_t=\sum_{i=1}^n (X_{t_i}-X_{t_{(i-1)}})^2 \stackrel{p}{\to} IV
 \end{equation}
 However the realized variance estimator for integrated volatility is not consistent when data is
-contaminated by market microstrcuture noise. In particular, when we only observe
+contaminated by market microstructure noise. In particular, when we only observe
 data with microstructure noise, the realized variance measure will
 diverge. When sampling frequency increases, realized variance actually estimates
 the sum of infinite many variances of noises.
@@ -419,7 +417,7 @@ the sum of infinite many variances of noises.
 \item Consistent: no
 \item Jump Robust: no
 \item Allows for time dependent noise: no
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize}
 \subsection{Usage}
 \begin{lstlisting}
@@ -530,7 +528,7 @@ thereby combining the two time scales $J$ and $K$. Here $\bar{n}_K = (n - K
 \item Consistent: yes
 \item Jump Robust: no
 \item Allows for time dependent noise: yes
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize} 
  \subsection{Usage}
 \begin{lstlisting}
@@ -595,7 +593,7 @@ where
 \item Consistent: yes
 \item Jump Robust: no
 \item Allows for time dependent noise: no
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize}
   \subsection{Usage}
 \begin{lstlisting}
@@ -641,9 +639,9 @@ Consistent estimator of $\beta$ is:
 \beta^2_n = \frac{2c_1^2 c_2^2}{3\nu^2_1}MBV(Y,4,0)_n
 \end{equation}
 We can choose the constants $c_1$ and
-$c_2$ that minimise the conditional variance. In order to compare our asymptotic variance
+$c_2$ that minimize the conditional variance. In order to compare our asymptotic variance
 with the corresponding results of other methods we assume that the volatility process $\sigma$
-is constant. In that case the conditional variance $\beta^2$ is minimised by
+is constant. In that case the conditional variance $\beta^2$ is minimized by
 \begin{equation}
 c_1 = \sqrt{\frac{18}{(c_2-1)(4-c_2)}\cdot\frac{\omega}{\sigma}}, \quad
 c_2 = \frac{8}{5}
@@ -663,7 +661,7 @@ c_2 = 2.
 \item Consistent: yes
 \item Jump Robust: yes
 \item Allows for time dependent noise: no
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize}
   \subsection{Usage}
 \begin{lstlisting}
@@ -736,7 +734,7 @@ Kernel-based Realized Variance is~\cite[Barndorff-Nielsen et al., 2006]{Barndorf
 \end{gather}
 \noindent with $h = -H, \ldots, -1,0,1, \ldots, H$ and $n = [1/\delta]$.\\
 
-\noindent Bandwidth for all kernrel is:
+\noindent Bandwidth for all kernel is:
 \begin{gather}
 H = cn^{2/3}\;
 \end{gather}
@@ -748,7 +746,7 @@ n^{1/6}\{\tilde{K}(X_{\delta}) - \int_0^t \sigma_u^2 du\}\stackrel{L_s}{\to} MN 
 \begin{gather}
 k_{\bullet}^{0,0} = \int_0^1 k(x)^2 dx, \quad k_{\bullet}^{0,2} = \int_0^1 k(x)k'(x) dx \quad k_{\bullet}^{0,4} = \int_0^1 k(x)k''(x) dx
 \end{gather}
-\noindent The value of $c$ which minimises the asymptotic variance is
+\noindent The value of $c$ which minimizes the asymptotic variance is
 \begin{gather}
 c = d \frac {\omega^{4/3}}{(t\int_0^t \sigma_u^4 du)^{1/3}}
 \end{gather}
@@ -759,9 +757,9 @@ d = \left[\frac{2{k^2(0)^2+k'(1)^2}}{k_{\bullet}^{0,0}}\right]^{1/2}
 \noindent The lower bound for the asymptotic variance is $6 dk_{\bullet}^{0,0}
 \omega^{4/3} (t \int_0^t \sigma_u^4 du)^{2/3}$\\
 
-\noindent But for non-flat-top kernel we can rewiew special case.\\
+\noindent But for non-flat-top kernel we can review special case.\\
 
-\noindent Bandwidth for non-flat-top kernrel is:
+\noindent Bandwidth for non-flat-top kernel is:
 \begin{gather}
 H = cn^{1/2}\;
 \end{gather}
@@ -772,7 +770,7 @@ n^{1/4}\{\tilde{K}(X_\delta) - \int_0^t \sigma_u^2 du\}
 MN\left[0,4c k_{\bullet}^{0,0} t \int_0^t \sigma_u^4 du - 8 c^{-1} k_{\bullet}^{0,2}\omega^2 \left(\int_0^t \sigma_u^2 du + \frac{\omega^2}{2}\right) + 4\omega^4c^{-3}\{k''(0) + k_{\bullet}^{0,4}\} \right]
 \end{gather}
 
-\noindent For this class of kernels the value of $\hat{c}$ which minimises the asymptotic variance is
+\noindent For this class of kernels the value of $\hat{c}$ which minimizes the asymptotic variance is
 \begin{gather}
 c \approx \sqrt{\frac{1}{k_{\bullet}^{0,0}} \left\{-k_{\bullet}^{0,2} + \sqrt{(k_{\bullet}^{0,2})^2 + 3 k_{\bullet}^{0,0} f} \right\}}
 \end{gather}
@@ -785,7 +783,7 @@ c \approx \sqrt{\frac{1}{k_{\bullet}^{0,0}} \left\{-k_{\bullet}^{0,2} + \sqrt{(k
 \item Consistent: yes
 \item Jump Robust: no
 \item Allows for time dependent noise: no
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize}
 \subsubsection{Non-Flat-Top Kernel}
 \begin{itemize}
@@ -794,7 +792,7 @@ c \approx \sqrt{\frac{1}{k_{\bullet}^{0,0}} \left\{-k_{\bullet}^{0,2} + \sqrt{(k
 \item Consistent: yes
 \item Jump Robust: no
 \item Allows for time dependent noise: yes
-\item Allows for for endogenous noise: yes
+\item Allows for endogenous noise: yes
 \end{itemize}
   \subsection{Usage}
 \begin{lstlisting}
@@ -836,7 +834,7 @@ where
 \label{pic:TableEstimators}
 \end{figure}
 
-
+ 
 %------------------------------------------------------
 \chapter{Price Noise Variance}
 %------------------------------------------------------
@@ -998,7 +996,7 @@ c_2 = 2.
 \item Consistent: yes
 \item Jump Robust: no
 \item Allows for time dependence noise: no
-\item Allows for for endogenous noise: no
+\item Allows for endogenous noise: no
 \end{itemize}
   \subsection{Usage}
 \begin{lstlisting}
@@ -1011,7 +1009,7 @@ quarticity_mrq(estimator)
 \bibitem{Zu_Boswijk}Y. Zu and Peter Boswijk, "Estimating spot volatility with high-frequency financial data", Journal of Econometrics, 181(2), pp. 117-135, 2014
 \bibitem{Zhang_Mykland_Ait-Sahalia}L. Zhang, P. A. Mykland, and Y. Ait-Sahalia, "A tale of two time scales: Determining integrated volatility with noisy high-frequency data", Journal of the American Statistical Association, vol. 100, No. 472, pp. 1394-1411, 2005.
 \bibitem{Podolskij_Vetter}M. Podolskij and M. Vetter, "Estimation of volatility functionals in the simultaneous presence of microstructure noise and jumps", Bernoulli, vol. 15, No. 3, pp. 634-658, 2009.
-\bibitem{BarndorffNielsen_Hansen_Lunde_Shephard}O.E.Barndorff-Nielsen, P.Reinhard Hansen, A.Lunde, and N.Shephard, "Designing realised kernels to measure the ex-post variation of equity prices in the presence of noise", Economics Series Working Papers 264, University of Oxford, Department of Economics, 2006.
+\bibitem{BarndorffNielsen_Hansen_Lunde_Shephard}O.E.Barndorff-Nielsen, P.Reinhard Hansen, A.Lunde, and N.Shephard, "Designing realized kernels to measure the ex-post variation of equity prices in the presence of noise", Economics Series Working Papers 264, University of Oxford, Department of Economics, 2006.
 \bibitem{Oomen}R. C. Oomen, "Comment on realized variance and market microstructure noise by Peter R. Hansen and Asger Lunde," pp. 1-15, 2005.
 \bibitem{Corsi_Kretschmer_Mittnik_Pigorsch} Corsi, F., U. Kretschmer, S. Mittnik and C. Pigorsch, "The Volatility of Realized Volatility", Econometric Reviews, pp. 46-78, 2008
 \end{thebibliography} 
